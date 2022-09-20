@@ -7,9 +7,7 @@ if (process.argv.length < 3) {
 
 const password = process.argv[2]
 
-
-
-const url = 
+const url =
     `mongodb+srv://fullstack:${password}@cluster0.ozntv.mongodb.net/personApp?retryWrites=true&w=majority`
 
 mongoose.connect(url)
@@ -36,8 +34,8 @@ if (process.argv.length === 3) {
         name: name,
         phonenumber: number
     })
-    
-    person.save().then(result => {
+
+    person.save().then(() => {
         console.log(`added ${name} number ${number} to phonebook`)
         mongoose.connection.close()
     })
